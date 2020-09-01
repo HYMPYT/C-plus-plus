@@ -1,0 +1,26 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include<iostream>
+using namespace std;
+int main()
+{
+	FILE *f = nullptr;
+	/*f = fopen("test.txt", "w");
+	if (f)
+	{
+		fputs("Test Hello", f);
+		fclose(f);
+	}*/
+	f = fopen("test.txt", "r");
+	char buf[500];
+	if (f)
+	{
+		while (!feof(f))
+		{
+			fgets(buf, 500, f);
+			cout << buf;
+		}
+		cout << endl;
+		fclose(f);
+	}
+	system("pause");
+}
